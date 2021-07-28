@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>How many states are there in America?</h3>
+                <h5 id = "change"></h5>
+
+                <button class="a">48</button>
+                <button class="a">54</button>
+                <button class="a">50</button>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function(){
+
+                        let els = document.getElementsByClassName("a");
+
+                        for(let i = 0; i < els.length; i ++){
+                            els[i].addEventListener("click", myfunc);
+                        }
+                    });
+
+                    function myfunc(){
+
+                          if(this.innerHTML != 50){
+                                this.style.backgroundColor = "red";
+                                change.innerHTML = "Incorrect";
+
+                            }else{
+                                this.style.backgroundColor = "green";
+                                change.innerHTML = "correct";
+                            }
+                    }
+                </script>
+
+                <!--Add multiple choice question here -->
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the capital of India?</h3>
+                <h5 id = "change2"></h5>
+
+                <!--Add free response question here -->
+
+                    <input  id="name" placeholder="Answer" type="text">
+                    <button id = "check">Submit</button>
+
+                <script>
+                    document.querySelector("#check").addEventListener("click", function(){
+
+                        let ans = document.querySelector('#name');
+
+                        if(ans.value != "Delhi"){
+                            ans.style.backgroundColor = "red";
+                            change2.innerHTML = "incorrect";
+
+                            }else{
+                                ans.style.backgroundColor = "green";
+                                change2.innerHTML = "correct";
+                            }
+                    });
+                </script>
+
+
+            </div>
+
+        </div>
+
+
+    </body>
+</html>
